@@ -47,10 +47,6 @@ class BinaryDotToBraille
   end
 end
 
-(0..7).inject(0) { |code, bit_digit|
-  mask = 1 << bit_digit
-  puts ((255 & mask) << LEFT_SHIFT_TABLE[mask]).to_s(2)
-}
 
 puts "|#{num_to_braille[
 ('10'+
