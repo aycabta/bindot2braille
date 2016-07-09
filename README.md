@@ -17,3 +17,20 @@ to
     ⠤⣼⡤⠄
     ⠰⠋⠳⠀
 
+and you can use interactive shell.
+
+    $ text2braille
+    YAPPY> hi
+    ⣆⠀⢐⠀
+    ⠇⠇⠸⠀
+    YAPPY> YAPPY
+    ⢆⠆⡔⡄⡖⡄⡖⡄⢆⠆
+    ⠸⠀⠏⠇⠏⠀⠏⠀⠸⠀
+    YAPPY> BAD BOY
+    ⣖⠄⡔⡄⡖⡄⠀⠀⣖⠄⡔⡄⢆⠆
+    ⠧⠃⠏⠇⠧⠃⠀⠀⠧⠃⠣⠃⠸⠀
+    YAPPY> I have a pen.
+    ⢲⠂⠀⠀⣆⠀⢀⡀⡀⡀⢀⡀⠀⠀⢀⡀⠀⠀⣀⠀⢀⡀⣀⠀⠀⠀
+    ⠼⠄⠀⠀⠇⠇⠣⠇⠗⠁⠫⠅⠀⠀⠣⠇⠀⠀⡧⠃⠫⠅⠇⠇⠠⠀
+    YAPPY> quit
+
