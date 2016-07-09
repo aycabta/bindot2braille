@@ -1,5 +1,5 @@
 
-class BinaryDotToBraille
+class BinDot2Braille
   LEFT_SHIFT_TABLE = {
     0b00000001 => 7,
     0b00000010 => 4,
