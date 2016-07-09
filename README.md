@@ -17,6 +17,8 @@ to
     ⠤⣼⡤⠄
     ⠰⠋⠳⠀
 
+== text2braille
+
 and you can use ASCII interactive converter shell.
 
     $ text2braille
@@ -33,4 +35,6 @@ and you can use ASCII interactive converter shell.
     ⢲⠂⠀⠀⣆⠀⢀⡀⡀⡀⢀⡀⠀⠀⢀⡀⠀⠀⣀⠀⢀⡀⣀⠀⠀⠀
     ⠼⠄⠀⠀⠇⠇⠣⠇⠗⠁⠫⠅⠀⠀⠣⠇⠀⠀⡧⠃⠫⠅⠇⠇⠠⠀
     YAPPY> quit
+
+Thanks, [Misaki font](http://www.geocities.jp/littlimi/misaki.htm).
 
