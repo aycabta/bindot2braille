@@ -17,9 +17,11 @@ to
     ⠤⣼⡤⠄
     ⠰⠋⠳⠀
 
+.
+
 ## text2braille
 
-and you can use ASCII interactive converter shell.
+It's ASCII interactive converter shell.
 
     $ text2braille
     YAPPY> hi
