@@ -5,7 +5,7 @@ require 'bindot2braille/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "bindot2braille"
-  spec.version       = Bindot2braille::VERSION
+  spec.version       = BinDot2Braille::VERSION
   spec.authors       = ["Code Ass"]
   spec.email         = ["aycabta@gmail.com"]
 
