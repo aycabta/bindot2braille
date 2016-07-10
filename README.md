@@ -21,6 +21,33 @@ to
 
 .
 
+## usage
+
+Install;
+
+`gem install bindot2braille`
+
+and use:
+
+```ruby
+require 'bindot2braille'
+
+char = BinDot2Braille.convert(
+  4, 8,
+  '0000'+ # This is 'A'
+  '0100'+
+  '1010'+
+  '1010'+
+  '1110'+
+  '1010'+
+  '1010'+
+  '0000'
+)
+
+# `char` has 2 dimensional array, graphical braille matrix.
+puts char.map{ |line| line.join }.join("\n")
+```
+
 ## text2braille
 
 It's ASCII interactive converter shell.
