@@ -14,9 +14,9 @@ class BinDot2Braille
   @@num_to_braille = {}
   (0..0xF).each do |upper|
     (0..0xF).each do |downer|
-      code = (0..7).inject(0) { |code, bit_digit|
+      code = (0..7).inject(0) { |code_in_loop, bit_digit|
         mask = 1 << bit_digit
-        code |= (num & mask) << LEFT_SHIFT_TABLE[mask]
+        code_in_loop |= (num & mask) << LEFT_SHIFT_TABLE[mask]
       }
       @@num_to_braille[code] = [(0x2800 + upper * 0x10 + downer)].pack('U*')
       num += 1
