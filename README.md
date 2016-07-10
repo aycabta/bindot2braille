@@ -1,6 +1,8 @@
 BinDot2Braille
 ==============
 
+[![Build Status](https://travis-ci.org/aycabta/bindot2braille.svg)](https://travis-ci.org/aycabta/bindot2braille)
+
 You can convert from
 
     00010000
