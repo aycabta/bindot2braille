@@ -1,3 +1,3 @@
-module BinDot2braille
-  VERSION = "0.1.0"
+module BinDot2Braille
+  VERSION = "0.0.1"
 end
