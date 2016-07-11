@@ -6,15 +6,28 @@ require 'yaml'
 require 'readline'
 require 'bindot2braille'
 
-ascii_font = YAML.load(open(File.expand_path('../../fontdata/misaki.yml', __FILE__)))
+font_table = YAML.load(
+  open(File.expand_path('../../fontdata/misaki.yml', __FILE__)).read +
+  open(File.expand_path('../../fontdata/kanji.yml', __FILE__)).read)
 
 while input = Readline.readline('YAPPY> ')
   case input
   when 'quit', 'exit'
     break
   else
-    input.split(//).map { |c|
-      BinDot2Braille.convert(4, 8, ascii_font[c])
+    input.split(//).reject { |c|
+      font_table[c].nil?
+    }
+    .map { |c|
+      bindot = font_table[c].split("\n")
+      {
+        width: bindot[0].size,
+        height: bindot.size,
+        bindot: bindot.join
+      }
+    }
+    .map { |data|
+      BinDot2Braille.convert(data[:width], data[:height], data[:bindot])
     }
     .each { |c|
       print c[0].join
