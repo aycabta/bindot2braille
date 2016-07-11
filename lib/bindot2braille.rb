@@ -13,7 +13,7 @@ class BinDot2Braille
   num = 0
   @@num_to_braille = {}
   (0..0xF).each do |upper|
-    (0..0xF).each do |downer|
+    (0..0xF).each do |lower|
       code = (0..7).inject(0) { |code_in_loop, bit_digit|
         mask = 1 << bit_digit
         code_in_loop |= (num & mask) << LEFT_SHIFT_TABLE[mask]
