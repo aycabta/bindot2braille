@@ -10,7 +10,7 @@ font_table = YAML.load(
   open(File.expand_path('../../fontdata/misaki.yml', __FILE__)).read +
   open(File.expand_path('../../fontdata/kanji.yml', __FILE__)).read)
 
-def process_input(input)
+def convert_text(input)
   input.split(//).reject { |c|
     font_table[c].nil?
   }
