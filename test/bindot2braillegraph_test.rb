@@ -9,8 +9,8 @@ describe BinDot2BrailleGraph do
     end
   end
 
-  describe "when asked about blending possibilities" do
-    it "won't say no" do
+  describe "binary dot to braille graph" do
+    it "convert 2x4" do
       assert_equal(
         BinDot2BrailleGraph.convert(
           2, 4,
@@ -19,6 +19,8 @@ describe BinDot2BrailleGraph do
           '10'+
           '11'),
         [['⣌']])
+    end
+    it "convert 4x8" do
       assert_equal(
         BinDot2BrailleGraph.convert(
           4, 8,
