@@ -35,17 +35,27 @@ def convert_text(input)
   .tap { puts }
 end
 
-begin
-  while input = Readline.readline('YAPPY> ')
-    case input
-    when 'quit', 'exit'
-      break
-    else
-      convert_text(input)
+def interactive
+  begin
+    while input = Readline.readline('YAPPY> ')
+      case input
+      when 'quit', 'exit'
+        break
+      else
+        convert_text(input)
+      end
     end
+  rescue Interrupt
+    puts "^C"
+    retry
   end
-rescue Interrupt
-  puts "^C"
-  retry
+end
+
+if File.pipe?(STDIN) || File.select([STDIN], [], [], 0) != nil then
+  STDIN.each_line do |line|
+    convert_text(line)
+  end
+else
+  interactive
 end
 
