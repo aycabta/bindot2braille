@@ -1,7 +1,7 @@
-BinDot2Braille
-==============
+BinDot2BrailleGraph
+===================
 
-[![Build Status](https://travis-ci.org/aycabta/bindot2braille.svg)](https://travis-ci.org/aycabta/bindot2braille)
+[![Build Status](https://travis-ci.org/aycabta/bindot2braillegraph.svg)](https://travis-ci.org/aycabta/bindot2braillegraph)
 
 You can convert from
 
@@ -25,14 +25,14 @@ to
 
 Install;
 
-`gem install bindot2braille`
+`gem install bindot2braillegraph`
 
 and use:
 
 ```ruby
-require 'bindot2braille'
+require 'bindot2braillegraph'
 
-char = BinDot2Braille.convert(
+char = BinDot2BrailleGraph.convert(
   4, 8,
   '0000'+ # This is 'A'
   '0100'+
@@ -44,15 +44,15 @@ char = BinDot2Braille.convert(
   '0000'
 )
 
-# `char` has 2 dimensional array, graphical braille matrix.
+# `char` has 2 dimensional array, braille graph matrix.
 puts char.map{ |line| line.join }.join("\n")
 ```
 
-## text2braille
+## text2braillegraph
 
 It's ASCII interactive converter shell.
 
-    $ text2braille
+    $ text2braillegraph
     YAPPY> hi
     ⣆⠀⢐⠀
     ⠇⠇⠸⠀

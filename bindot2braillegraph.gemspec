@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'bindot2braille/version'
+require 'bindot2braillegraph/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "bindot2braille"
-  spec.version       = BinDot2Braille::VERSION
+  spec.name          = "bindot2braillegraph"
+  spec.version       = BinDot2BrailleGraph::VERSION
   spec.authors       = ["Code Ass"]
   spec.email         = ["aycabta@gmail.com"]
 
-  spec.summary       = %q{Binary data to braille character}
-  spec.description   = %q{Binary data 01001011 to braille character ⣌}
-  spec.homepage      = "https://github.com/aycabta/bindot2braille"
+  spec.summary       = %q{Binary data to braille graph}
+  spec.description   = %q{Binary data 01001011 to braille graph ⣌}
+  spec.homepage      = "https://github.com/aycabta/bindot2braillegraph"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

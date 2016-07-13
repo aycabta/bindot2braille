@@ -4,7 +4,7 @@ $: << File.expand_path("../../lib/", __FILE__)
 
 require 'yaml'
 require 'readline'
-require 'bindot2braille'
+require 'bindot2braillegraph'
 
 font_table = YAML.load(
   open(File.expand_path('../../fontdata/misaki.yml', __FILE__)).read +
@@ -23,7 +23,7 @@ def convert_text(input)
     }
   }
   .map { |data|
-    BinDot2Braille.convert(data[:width], data[:height], data[:bindot])
+    BinDot2BrailleGraph.convert(data[:width], data[:height], data[:bindot])
   }
   .each { |c|
     print c[0].join
