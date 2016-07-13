@@ -50,7 +50,17 @@ puts char.map{ |line| line.join }.join("\n")
 
 ## text2braillegraph
 
-It's ASCII interactive converter shell.
+It's ASCII font converter, can process STDIN and interactive shell.
+
+STDIN:
+
+    $ printf "happy kiss\n*festival*" | text2braillegraph
+    ⣆⠀⢀⡀⣀⠀⣀⠀⡀⡀⠀⠀⡆⡀⢐⠀⢀⡀⢀⡀
+    ⠇⠇⠣⠇⡧⠃⡧⠃⣑⠇⠀⠀⠏⠆⠸⠀⠽⠂⠽⠂
+    ⢴⠄⣰⡂⢀⡀⢀⡀⣠⡀⢐⠀⡀⡀⢀⡀⢲⠀⢴⠄
+    ⠁⠁⠸⠀⠫⠅⠽⠂⠸⠄⠸⠀⠗⠁⠣⠇⠸⠀⠁⠁
+
+Interactive shell:
 
     $ text2braillegraph
     YAPPY> hi
