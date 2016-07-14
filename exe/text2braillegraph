@@ -5,6 +5,9 @@ $: << File.expand_path("../../lib/", __FILE__)
 require 'yaml'
 require 'readline'
 require 'bindot2braillegraph'
+require 'optparse'
+require 'pty'
+require 'io/console'
 
 FONT_TABLE = YAML.load(
   open(File.expand_path('../../fontdata/misaki.yml', __FILE__)).read +
@@ -51,7 +54,50 @@ def interactive
   end
 end
 
-if File.pipe?(STDIN) || File.select([STDIN], [], [], 0) != nil
+def process_io(console_read, console_write, raw_stdin)
+  r_array, dummy = IO.select([console_read, raw_stdin], [], [], 1)
+  return if r_array.nil?
+  r_array.each do |rs|
+    if rs == raw_stdin
+      c = raw_stdin.getc
+      if c == ?\C-c
+        puts '^C'
+        return false
+      end
+      print c
+      console_write.write(c)
+    else
+      begin
+        print rs.readpartial(1024)
+      rescue EOFError
+        return false
+      end
+    end
+  end
+end
+
+command = nil
+
+opt = OptionParser.new
+opt.on('-c VAL') { |v|
+  command = v
+}
+opt.parse!(ARGV)
+
+if not command.nil?
+  # Process.kill("INT", pid)
+  STDIN.echo = false
+  STDIN.raw do |raw_stdin|
+    PTY.spawn(command) do |r, w, pid|
+      while true
+        if process_io(r, w, raw_stdin) == false
+          break
+        end
+      end
+    end
+  end
+  STDIN.echo = true
+elsif File.pipe?(STDIN) || File.select([STDIN], [], [], 0) != nil
   STDIN.each_line do |line|
     convert_text(line)
   end
