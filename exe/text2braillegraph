@@ -51,7 +51,7 @@ def interactive
   end
 end
 
-if File.pipe?(STDIN) || File.select([STDIN], [], [], 0) != nil then
+if File.pipe?(STDIN) || File.select([STDIN], [], [], 0) != nil
   STDIN.each_line do |line|
     convert_text(line)
   end
