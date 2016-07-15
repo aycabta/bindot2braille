@@ -99,7 +99,7 @@ if not command.nil?
       end
     end
   end
-  puts
+  print "\n"
 elsif File.pipe?(STDIN) || File.select([STDIN], [], [], 0) != nil
   STDIN.each_line do |line|
     convert_text(line)
