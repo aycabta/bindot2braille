@@ -69,7 +69,7 @@ def process_io(console_read, console_write, stdin)
     else
       begin
         print rs.readpartial(1024)
-      rescue EOFError
+      rescue EOFError, Errno::EIO
         return false
       end
     end
