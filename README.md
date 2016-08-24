@@ -32,6 +32,10 @@ and use:
 ```ruby
 require 'bindot2braillegraph'
 
+# BinDot2BrailleGraph.convert(
+#   width, height,
+#   zero_or_one_binary_data_of_one_dimensional_string
+# )
 char = BinDot2BrailleGraph.convert(
   4, 8,
   '0000'+ # This is 'A'
@@ -44,7 +48,7 @@ char = BinDot2BrailleGraph.convert(
   '0000'
 )
 
-# `char` has 2 dimensional array, braille graph matrix.
+# `char` what was returned has 2 dimensional array, braille graph matrix.
 puts char.map{ |line| line.join }.join("\n")
 ```
 
